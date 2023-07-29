@@ -27,6 +27,10 @@ sudo make install
 
 # Remove installers
 rm -rf $HOME/Orchis-theme $HOME/Tela-icon $HOME/Volantes-cursors
+gsettings set org.gnome.shell.extensions.user-theme name "Orchis-Dark-Compact"
+gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Dark-Compact"
+gsettings set org.gnome.desktop.interface icon-theme "Tela-dark"
+gsettings set org.gnome.desktop.interface cursor-theme "volantes_cursors"
 
 # Download fonts
 # Roboto Regular
@@ -40,9 +44,25 @@ sudo curl 'https://objects.githubusercontent.com/github-production-release-asset
 sudo unzip /usr/share/fonts/Inconsolata.zip
 sudo rm -rf /usr/share/fonts/Inconsolata.zip
 
-# Set background
+# Set fonts
+gsettings set org.gnome.desktop.interface font-name "Roboto Regular 10"
+gsettings set org.gnome.desktop.interface document-font-name "Roboto Regular 10"
+gsettings set org.gnome.desktop.interface monospace-font-name "Roboto Mono Regular 10"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Regular 10"
+
+# Download background
 sudo wget 'https://w.wallhaven.cc/full/x8/wallhaven-x8893d.png' /usr/share/backgrounds/ -o "debianWallpaper.png"
+# Set background
 feh --bg-fill "/usr/share/backgrounds/debianWallpaper.png"
+
+# Set zsh default shell
+chsh -s /usr/bin/zsh $USER
+
+# ohMyZsh! install
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Powerlevel10k install
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+sed -i 's/ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
 # Removing iusses dependences
 sudo apt remove --purge -y feh inkscape
