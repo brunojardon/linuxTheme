@@ -28,7 +28,7 @@ Este script lo programe para hacerme mas fácil la instalación de todo mi entor
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/) 
 
 ## Dependencias
-El script ya se encarga de instalar las dependencias, lo que si esta todo basado en un sistema Debian 12 (bookworm) con GNOME 43 en Xorg en otras distribuciones basadas en Debian muy seguramente funcione igual. <br>
+El script ya se encarga de instalar las dependencias, lo que si esta todo basado en un sistema Debian 12 (Bookworm) con GNOME 43 en Xorg, en otras distribuciones basadas en Debian tal vez funcione igual. <br>
 Las dependencias a instalar son: `git curl wget make zsh nemo inkscape dconf-cli uuid-runtime libsass1 sassc gnome-themes-extra gtk2-engines-murrine feh` <br>
 Al terminar la instalacion si se desea, se desinstalaran las dependencias `feh inkscape`
 ## Instalación
@@ -40,4 +40,4 @@ cd myTheme
 ./install.sh
 ```
 
-En el procedimiento se descargan varios recursos, estos son eliminados cuando ya se completo su función.
+En el procedimiento se descargan varios recursos, estos son eliminados cuando ya se haya completado su función.
