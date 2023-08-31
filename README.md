@@ -1,4 +1,4 @@
-# myTheme
+# linuxTheme
 Esta es la compilación de personalizaciones que uso en mi sistema Debian junto con el entorno de escritorio GNOME y algunas extensiones.
 ![Preview](./previews/preview3.png)
 
